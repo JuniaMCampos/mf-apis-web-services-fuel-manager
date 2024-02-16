@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mf_apis_web_services_fuel_manager.Models
 {
+    [Table("Usuarios")]
     public class Usuario
     {
         [Key]
@@ -12,6 +14,8 @@ namespace mf_apis_web_services_fuel_manager.Models
         public string Password { get; set; }
         [Required]
         public Perfil Perfil { get; set; }
+
+        public ICollection<VeiculoUsuario> Veiculos { get; set; }
     }
 
     public enum Perfil
