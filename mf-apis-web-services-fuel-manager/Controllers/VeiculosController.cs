@@ -48,6 +48,7 @@ namespace mf_apis_web_services_fuel_manager.Controllers
         public async Task<ActionResult> GetById(int id)
         {
             var model = await _context.Veiculos
+                .Include(t => t.Consumos)
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (model == null) return NotFound();
