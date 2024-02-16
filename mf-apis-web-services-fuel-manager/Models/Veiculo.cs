@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static mf_apis_web_services_fuel_manager.Models.LinkDto;
 
 namespace mf_apis_web_services_fuel_manager.Models
 {
     [Table("Veiculos")]
-    public class Veiculo
+    public class Veiculo : LinksHATEOS
     {
         [Key]
         public int Id { get; set; }
