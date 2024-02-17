@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace mf_apis_web_services_fuel_manager.Models
 {
@@ -11,6 +12,7 @@ namespace mf_apis_web_services_fuel_manager.Models
         [Required]
         public string Nome { get; set; }
         [Required]
+        [JsonIgnore] //JasonIgnore faz com que o campo não apareça no retorno da API
         public string Password { get; set; }
         [Required]
         public Perfil Perfil { get; set; }
